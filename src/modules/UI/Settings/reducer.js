@@ -70,7 +70,9 @@ export const settings = (state = initialState, action) => {
   }
 
   case ACTION.SET_AUTO_LOGOUT_TIME: {
-    const {autoLogoutTimeInSeconds} = data
+    const autoLogoutTimeInSeconds = 3601
+    // const autoLogoutTimeInSeconds = SYNCED_ACCOUNT_DEFAULTS.autoLogoutTimeInSeconds
+    // const autoLogoutTimeInSeconds = data.autoLogoutTimeInSeconds || SYNCED_ACCOUNT_DEFAULTS.autoLogoutTimeInSeconds
     return {
       ...state,
       autoLogoutTimeInSeconds

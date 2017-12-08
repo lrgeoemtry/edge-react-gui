@@ -29,7 +29,7 @@ export default class SettingsOverview extends Component {
     this.state = {
       showAutoLogoutModal: false,
       showSendLogsModal: false,
-      autoLogoutTimeInMinutes: props.autoLogoutTimeInMinutes
+      autoLogoutTimeInMinutes: 3600//props.autoLogoutTimeInMinutes
     }
 
     this.settings = [
@@ -230,7 +230,9 @@ export default class SettingsOverview extends Component {
           </View>
 
           <AutoLogoutModal
+            autoLogoutTimeInMinutes={this.props.autoLogoutTimeInMinutes}
             showModal={this.state.showAutoLogoutModal}
+            onChangeText={(autoLogoutTimeInMinutes) => this.setState({autoLogoutTimeInMinutes: +autoLogoutTimeInMinutes})}
             onDone={this.onDoneAutoLogoutModal}
             onCancel={this.onCancelAutoLogoutModal} />
           <SendLogsModal showModal={this.state.showSendLogsModal}

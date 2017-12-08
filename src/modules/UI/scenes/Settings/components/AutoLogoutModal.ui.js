@@ -1,3 +1,6 @@
+// This file does not use the `.ios.js` file extension due to a bug in flow
+// https://github.com/facebook/flow/issues/945
+
 import React, {Component} from 'react'
 import {Picker} from 'react-native'
 
